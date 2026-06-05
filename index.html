@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womb to Tomb: Birth Doula & End-of-Life Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e6edea',
+                            200: '#cfddd6',
+                            300: '#adc3b7',
+                            400: '#8FA388', /* Exact Brand Sage from Logo */
+                            500: '#6d8c7c',
+                            600: '#547061',
+                            700: '#43584c',
+                            800: '#35463d',
+                            900: '#2c3932',
+                        },
+                        charcoal: {
+                            50: '#f6f6f7',
+                            100: '#ececed',
+                            200: '#d5d6d9',
+                            300: '#b1b3b9',
+                            400: '#858892',
+                            500: '#646772',
+                            600: '#4e505a',
+                            700: '#3f414a',
+                            800: '#1C2321', /* Brand Dark Accent */
+                            900: '#151918',
+                        },
+                        cream: {
+                            50: '#faf9f6',
+                            100: '#F4F1EA', /* Warm Accent Base */
+                            200: '#e8e2d4',
+                            300: '#d5cbb5',
+                            400: '#bea18d',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8FA388;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6d8c7c;
+        }
+        .blur-backdrop {
+            backdrop-filter: blur(12px);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Custom screen-reader skip link */
+        .skip-link:focus {
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-charcoal-800 font-sans selection:bg-charcoal-800 selection:text-white overflow-x-hidden">
+
+    <!-- Skip to Content Link (Keyboard Navigation only) -->
+    <a href="#main-content" class="skip-link absolute -top-16 left-0 bg-charcoal-800 text-cream-50 px-6 py-4 rounded-b-xl font-bold tracking-wider uppercase text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-400">
+        Skip to main content
+    </a>
+
+    <!-- Navigation (Blended seamlessly into the top Sage header background) -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#8FA388]/90 transition-all duration-300" aria-label="Main Site Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <span class="font-display font-bold tracking-wider text-charcoal-800 text-base sm:text-lg">WOMB<br><center>TO<br>TOMB</span>
+                </div>
+                <!-- Main Nav Links -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="#philosophy" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Philosophy</a>
+                    <a href="#thresholds" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">The Thresholds</a>
+                    <a href="#services" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all bg-cream-100/40 px-3 py-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Services</a>
+                    <a href="#legacy" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Legacy Letters</a>
+                    <a href="#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Credentials</a>
+                    <a href="#connect" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</a>
+                </div>
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-charcoal-800 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#8FA388] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#philosophy" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Philosophy</a>
+            <a href="#thresholds" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">The Thresholds</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
+            <a href="#legacy" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Legacy Letters</a>
+            <a href="#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
+            <a href="#connect" onclick="toggleMobileMenu()" class="block bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Top Header Logo Section (Matching exact sage background of logo) -->
+    <header id="main-content" class="bg-[#8FA388] pt-32 pb-12 flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <!-- Exactly sized logo with NO surrounding board or border, blending natively into the background -->
+            <img id="main-hero-logo" 
+                 src="https://media.canva.com/v2/image-resize/format:JPG/height:494/quality:92/uri:ifs%3A%2F%2FM%2F86bed7d5-eb85-4661-82e4-1c40d98f91dc/watermark:F/width:510?csig=AAAAAAAAAAAAAAAAAAAAAIaUKVlOBiJQlykoNzmlSieVcPBPdLTpZEWQadQLLE-T&exp=1780705073&osig=AAAAAAAAAAAAAAAAAAAAAEaKUs_oRbGtST5U2HsAZos1AWwbvUTEBdHRgWdSvylz&signer=media-rpc&x-canva-quality=thumbnail_large" 
+                 alt="Womb to Tomb: Birth Doula & End of Life. Dual Certified Services Logo." 
+                 class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] h-auto mx-auto object-contain fade-in-up">
+        </div>
+    </header>
+
+    <!-- Tagline & Hero Statement (Smooth transition back to off-white bg-cream-100) -->
+    <section class="relative bg-cream-100 pt-16 pb-24 flex flex-col justify-between overflow-hidden" aria-labelledby="hero-heading">
+        <!-- Background Decorators -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <div class="absolute w-[40vw] h-[40vw] bg-sage-200 rounded-full blur-[100px] -top-10 -left-10" aria-hidden="true"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 fade-in-up">
+            <!-- Subtitle -->
+            <p class="font-display tracking-[0.25em] text-xs sm:text-sm font-bold text-charcoal-800/90 uppercase">
+                Jennifer Thomas &nbsp;•&nbsp; Dual Certified Services
+            </p>
+            
+            <!-- Master Tagline Quote -->
+            <h1 id="hero-heading" class="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-charcoal-800 leading-[1.2] italic font-light">
+                “Labor is physiological. <br class="hidden sm:inline">Death is inevitable. <span class="font-normal not-italic text-sage-900 block mt-2">I handle both.</span>”
+            </h1>
+            
+            <!-- Bio Frame -->
+            <p class="font-sans text-lg sm:text-xl text-charcoal-800/95 font-light leading-relaxed max-w-2xl mx-auto pt-4">
+                Holding space for life’s most sacred thresholds. Providing continuous, calm, and unshakable protection from womb to tomb.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-wrap gap-4 justify-center pt-6">
+                <a href="#services" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all">
+                    Support Services
+                </a>
+                <a href="#connect" class="border border-charcoal-800/30 text-charcoal-800 px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-charcoal-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 transition-all">
+                    Inquire for Care
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy & Complete Biography Section -->
+    <section id="philosophy" class="py-24 bg-cream-50 text-[#1C2321] relative border-t border-b border-charcoal-800/10" aria-labelledby="philosophy-heading">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">The Care Philosophy</span>
+                <h2 id="philosophy-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Sacred Thresholds</h2>
+                <div class="w-16 h-[2px] bg-sage-400 mx-auto mt-4" aria-hidden="true"></div>
+            </div>
+
+            <!-- Narrative Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="p-8 bg-cream-100 rounded-2xl border-l-4 border-sage-400 shadow-sm relative">
+                        <span class="absolute -top-6 -left-2 text-sage-200 font-serif text-9xl select-none leading-none opacity-60" aria-hidden="true">“</span>
+                        <blockquote class="font-serif italic text-xl text-charcoal-800 relative z-10 leading-relaxed">
+                            "There is a profound, quiet beauty that exists at the borders of our human experience."
+                        </blockquote>
+                    </div>
+                    
+                    <div class="p-6 bg-sage-400/10 rounded-2xl border border-sage-400/20">
+                        <h3 class="font-display text-xs uppercase font-bold tracking-wider text-sage-800 mb-2">Integrated Care Promise</h3>
+                        <p class="text-sm font-light text-charcoal-700 leading-relaxed">
+                            No matter which threshold you are traversing, you are protected with deep-rooted intuition, clinical standards of advocacy, and somatic healing arts.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-8 font-light text-lg text-charcoal-800/95 leading-relaxed">
+                    <p class="font-serif italic text-xl font-normal text-sage-900">
+                        Whether it is the breathtaking anticipation of a first breath or the sacred surrender of a last one, I believe that every transition deserves to be met with absolute dignity, peace, and love.
+                    </p>
+                    
+                    <p>
+                        As a birth and death doula, my mission is to anchor you and your family through life’s deepest waters. On the side of new beginnings, I offer continuous, compassionate support tailored to your body's natural wisdom—protecting your birthing space so you can safely bloom into parenthood.
+                    </p>
+                    
+                    <p>
+                        On the side of endings, I bring that same grounded calm to the bedside, helping families navigate the tender reality of final days, honoring a peaceful departure, and preserving your legacy.
+                    </p>
+
+                    <div class="p-6 bg-cream-100/80 rounded-2xl border border-charcoal-800/5 mt-8">
+                        <p class="font-medium text-charcoal-800 text-base italic leading-relaxed">
+                            "Walking the entire circle of life has taught me just how precious every single milestone truly is. Whether you are welcoming a little one into a space of absolute warmth or guiding a loved one home, I am here to hold your hand, advocate for your choices, and protect your family unit from womb to tomb."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Twin-Gates Framework -->
+    <section id="thresholds" class="py-24 bg-cream-100 relative overflow-hidden" aria-labelledby="thresholds-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-charcoal-600 uppercase font-bold">Comprehensive Offerings</span>
+                <h2 id="thresholds-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Womb &amp; Tomb Frameworks</h2>
+                <p class="text-charcoal-600 font-light max-w-xl mx-auto">Two hemispheres of the exact same life cycle, tended to with identical integrity, safety, and emotional balance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Birth Column -->
+                <div class="bg-cream-50 rounded-3xl p-8 sm:p-12 shadow-md border border-sage-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
+                    <div>
+                        <div class="w-16 h-16 bg-sage-100 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-3xl text-charcoal-900 mb-2">Birth &amp; Pre-Birth Care</h3>
+                        <p class="font-display text-xs uppercase tracking-widest text-sage-700 font-semibold mb-6">Physiological Childbirth Support</p>
+                        
+                        <p class="font-light text-charcoal-700 leading-relaxed mb-8">
+                            A dedicated, continuous support dynamic focused on helping your nervous system relax so your birthing physiology can perform dynamically. Protecting your decisions, your rhythm, and your family's intimacy.
+                        </p>
+
+                        <div class="space-y-4 border-t border-charcoal-800/10 pt-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-600" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-charcoal-800">Protecting the Birth Chamber</h4>
+                                    <p class="text-sm font-light text-charcoal-600">Proactively shielding you and your birth companion from unnecessary ambient stressors.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-600" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-charcoal-800">Holistic Labor Support</h4>
+                                    <p class="text-sm font-light text-charcoal-600">Continuous movement support, water therapies, positioning, and intuitive comforting touch.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#services" class="inline-flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 rounded-lg py-1 px-2">
+                            Learn More About Birth Care <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Death Column -->
+                <div class="bg-[#1C2321] rounded-3xl p-8 sm:p-12 shadow-xl shadow-charcoal-900/40 border border-charcoal-800 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 text-cream-50 relative group">
+                    <div>
+                        <!-- Replaced sun/half-sun with high quality crescent moon SVG -->
+                        <div class="w-16 h-16 bg-charcoal-800 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-3xl text-cream-100 mb-2">End-of-Life &amp; Vigil Care</h3>
+                        <p class="font-display text-xs uppercase tracking-widest text-sage-400 font-semibold mb-6">Conscious End-of-Life Planning &amp; Vigil</p>
+                        
+                        <p class="font-light text-cream-200/80 leading-relaxed mb-8">
+                            A highly protective, somatic, and spiritual presence focused on crafting a serene, beautifully coordinated transition. Helping your close circle carry your dignity and voice when they are needed most.
+                        </p>
+
+                        <div class="space-y-4 border-t border-cream-100/10 pt-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cream-100">Advance Vigil Directives</h4>
+                                    <p class="text-sm font-light text-cream-200/60">Structuring sound, beautiful frameworks to govern environmental comfort, touch, and lighting.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cream-100">Legacy and Life Review</h4>
+                                    <p class="text-sm font-light text-cream-200/60">Using structural conversations, recordings, and customized project work to organize your lifetime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#services" class="inline-flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-sage-400 hover:text-sage-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 rounded-lg py-1 px-2">
+                            Learn More About End-of-Life Support <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brand Services Section -->
+    <section id="services" class="py-24 bg-cream-50 relative overflow-hidden border-t border-b border-charcoal-800/10" aria-labelledby="services-heading">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Offerings &amp; Support Tiers</span>
+                <h2 id="services-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Support Offerings</h2>
+                <p class="text-charcoal-600 font-light max-w-xl mx-auto">Comprehensive, professional packages designed to provide stability, continuity, and deep physical presence through life's primary thresholds.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-sage-700 font-semibold">Birth &amp; Pre-Birth Care</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">Birth Doula Complete Support</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Full, continuous care starting in early pregnancy. Includes prenatal educational alignments, physiological birthing map design, continuous on-call bedside presence starting at 38 weeks, active labor somatic touch comfort measures, and warm postpartum support.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Tethered Package</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-charcoal-600 font-semibold">End-of-Life, Vigil &amp; Grief Care</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">End-of-Life Vigil Care</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Support plans for active dying vigils. Providing somatic anchors, emotional counsel for loved ones, structuring legal/administrative advance directives, legacy record coordination, and sensitive, continuous bedside vigil attendance.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Tethered Package</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-charcoal-700 hover:text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-sage-700 font-semibold">Somatic Balance</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">Somatic Integration &amp; Reiki</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Dedicated private sessions combining certified Usui Reiki energy alignments, comforting Raindrop organic essential oil therapies, and physical mind-body somatic methods designed to naturally down-regulate environmental nervous tension.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Individual Sessions</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Legacy Letter Writing Tool -->
+    <section id="legacy" class="py-24 bg-cream-100 relative border-t border-b border-charcoal-800/10" aria-labelledby="legacy-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="text-center space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Sacred Legacy Crafting</span>
+                <h2 id="legacy-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">The Lasting Letters Studio</h2>
+                <p class="text-charcoal-600 font-light max-w-xl mx-auto">
+                    Leaving raw, pure tokens of love is one of the most powerful actions of human threshold transit. Use our private local drafting space to formulate your thoughts.
+                </p>
+            </div>
+
+            <div class="p-8 bg-cream-50 rounded-3xl border border-charcoal-800/10 space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h3 class="font-serif text-xl text-charcoal-900">Choose a Transition Prompt:</h3>
+                        <p class="text-xs text-charcoal-600">Click a button repeatedly to rotate through different writing prompts.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button id="btn-newborn" onclick="applyPrompt('birth-baby')" class="bg-cream-100 hover:bg-sage-100 text-charcoal-800 text-xs font-semibold px-4 py-2 rounded-lg border border-charcoal-800/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 transition-all">To My Newborn (Option 1)</button>
+                        <button id="btn-circle" onclick="applyPrompt('transition-grief')" class="bg-cream-100 hover:bg-sage-100 text-charcoal-800 text-xs font-semibold px-4 py-2 rounded-lg border border-charcoal-800/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 transition-all">To My Chosen Circle (Option 1)</button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="legacy-textarea" class="block text-xs font-bold uppercase tracking-wider text-charcoal-600">Your Letter Draft:</label>
+                    <textarea id="legacy-textarea" rows="8" class="w-full bg-cream-100 border border-charcoal-800/20 rounded-2xl p-5 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 font-serif leading-relaxed text-charcoal-800 placeholder-charcoal-500" placeholder="Let your thoughts settle onto this virtual page. These inputs remain entirely local and private..."></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-2">
+                    <span class="text-xs text-charcoal-600 italic">★ Write, refine, and secure. We do not store this data.</span>
+                    <div class="flex gap-2 w-full sm:w-auto font-sans">
+                        <button onclick="copyToClipboard()" class="flex-1 sm:flex-none bg-sage-500 hover:bg-sage-600 text-white font-bold text-xs uppercase px-6 py-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all">
+                            Copy Content
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Professional Credentials Grid -->
+    <section id="credentials" class="py-24 bg-charcoal-800 text-cream-50 relative overflow-hidden" aria-labelledby="credentials-heading">
+        <div class="absolute inset-0 pointer-events-none opacity-5">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="50%" cy="50%" r="40%" stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-400 uppercase font-bold">Rigorous Standards</span>
+                <h2 id="credentials-heading" class="font-serif text-4xl sm:text-5xl text-cream-100">Validated Certifications</h2>
+                <div class="w-16 h-[2px] bg-sage-400 mx-auto mt-4" aria-hidden="true"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- Clinical/Institutional Credentials Block -->
+                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 space-y-6">
+                    <h3 class="font-serif text-2xl text-sage-300">Institutional Frameworks</h3>
+                    <div class="divide-y divide-charcoal-800">
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">International End of Life Doula Association</h4>
+                                <p class="text-sm font-light text-cream-200/70">Professional palliative presence and clinical bedside advocacy.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">End of Life Care Specialist / Death Doula</h4>
+                                <p class="text-sm font-light text-cream-200/70">Dedicated vigil support, emotional legacy framing, and comfort measures.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">Madriella Doula Network</h4>
+                                <p class="text-sm font-light text-cream-200/70">Certified Birth Doula focusing on physiologic support and birth mechanics.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">University of Georgia</h4>
+                                <p class="text-sm font-light text-cream-200/70">Criminal Justice — supporting families with clear, objective navigation through complex legal and administrative decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Somatic / Integrated Healing Arts Block -->
+                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 space-y-6">
+                    <h3 class="font-serif text-2xl text-sage-300">Somatic &amp; Holistic Arts</h3>
+                    <div class="divide-y divide-charcoal-800">
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">Reiki Master</h4>
+                                <p class="text-sm font-light text-cream-200/70">Energetic integration, tension-releasing body methods, and quiet space-holding.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">Raindrop Therapy Certified</h4>
+                                <p class="text-sm font-light text-cream-200/70">Anointing and oil application techniques designed for holistic biological balancing.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">Somatic Mind-Body Healing Practitioner</h4>
+                                <p class="text-sm font-light text-cream-200/70">Supporting organic trauma release pathways, nervous system regulation, and comforting somatic touch.</p>
+                            </div>
+                        </div>
+                        <div class="py-4 flex gap-4 items-start">
+                            <span class="text-sage-400 text-xl" aria-hidden="true">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-cream-100 text-lg">Ordained Minister</h4>
+                                <p class="text-sm font-light text-cream-200/70">Sovereign authority to officiate lifecycle ceremonies, weddings, funerals, and memorials.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking / Contact Intake Portal -->
+    <section id="connect" class="py-24 sm:py-32 bg-cream-50 text-[#1C2321] relative" aria-labelledby="connect-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="text-center space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Initiate Connection</span>
+                <h2 id="connect-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Protected Consultation Intake</h2>
+                <p class="text-charcoal-600 font-light max-w-md mx-auto">
+                    Share your details below. Let me hold space as we navigate your family's upcoming transition.
+                </p>
+            </div>
+
+            <!-- Booking form content -->
+            <div id="booking-container" class="bg-cream-100 rounded-3xl p-8 sm:p-12 shadow-md border border-charcoal-800/10">
+                <form id="intake-form" onsubmit="handleIntakeSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="form-name" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Preferred Name</label>
+                            <input id="form-name" type="text" required class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="form-email" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Email Address</label>
+                            <input id="form-email" type="email" required class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="name@domain.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="form-threshold-select" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Primary Threshold Focus</label>
+                            <select id="form-threshold-select" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm">
+                                <option>Birth &amp; Pre-Birth Doula Care</option>
+                                <option>End-of-Life, Vigil &amp; Grief Care</option>
+                                <option>Somatic / Integrated Healing Arts Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="form-timeline" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Expected Timeline / Target Date</label>
+                            <input id="form-timeline" type="text" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="e.g., Spring 2026 / Imminent Support">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="form-message" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Detailed Narrative or Special Directives</label>
+                        <textarea id="form-message" rows="5" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Please feel free to share what your heart demands at this threshold..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-charcoal-800 hover:bg-sage-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all transform active:scale-[0.99]">
+                        Send Secure Message
+                    </button>
+                </form>
+
+                <!-- Success Screen -->
+                <div id="success-screen" class="hidden text-center py-12 space-y-6" role="status" aria-live="polite">
+                    <div class="w-20 h-20 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold" aria-hidden="true">
+                        ✓
+                    </div>
+                    <h3 class="font-serif text-3xl text-charcoal-900">Your Inquiry is Anchored</h3>
+                    <p class="text-charcoal-600 font-light max-w-md mx-auto">
+                        Thank you for sharing your heart. Jennifer will personally review your information and respond securely within 24 hours.
+                    </p>
+                    <button onclick="resetForm()" class="bg-charcoal-100 hover:bg-charcoal-200 text-charcoal-800 px-6 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">
+                        Submit Another Request
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-charcoal-900 text-cream-100/50 py-12 border-t border-charcoal-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <span class="font-display font-bold tracking-wider text-cream-50">WOMB TO TOMB</span>
+            <p class="text-center font-light text-xs sm:text-sm">
+                &copy; 2026 Womb to Tomb Care. Dual certified birth and end-of-life care. All rights reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="#main-content" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sage-400 rounded-lg px-2 py-1">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Wrapper for screen readers -->
+    <div id="toast-announcer" class="sr-only" aria-live="polite"></div>
+
+    <!-- Front-End Javascript for Interactive Features -->
+    <script>
+
+        // Toggle mobile nav screen
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const btn = document.getElementById('mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Rotational prompt data blocks
+        const prompts = {
+            'newborn': [
+                "To my precious little one,\n\nEven now, before I hold your hand, I feel your small, strong heart rhythm. The world is soft here in the quiet anticipation of your first breath. When you wake to this light, know that my voice was the first to sing you home...\n\n",
+                "To the little soul about to emerge,\n\nWe have prepared this space for you with soft light, warm blankets, and open arms. As we count down the final moments of quiet before your grand arrival, I promise to protect your peace, follow our bodies' wisdom, and hold you close...\n\n",
+                "To my baby,\n\nYou are carrying the strength of all the generations before us into your first moments of life. I am ready to breathe with you, labor with you, and guide you gently into this beautiful world...\n\n"
+            ],
+            'circle': [
+                "To my dearest loved ones,\n\nI want you to hold this paper not with grief, but with the quiet understanding that every thread of my life was beautifully intertwined with yours. In my final moments, I feel only absolute safety, love, and a serene light leading me to rest...\n\n",
+                "To my chosen circle,\n\nWhen you read this, remember the laughter we shared and the quiet evenings where we simply held space for one another. My final wish is for you to carry our memories forward as a lantern, not a burden. Take care of each other, breathe deeply, and be gentle with your sorrow...\n\n",
+                "To those who have walked beside me,\n\nMy journey across this threshold is peaceful. I am surrounded by warmth, dignity, and the profound love we built together. Do not rush your grief—let it flow like water, knowing that my love remains an unshakable anchor in your lives...\n\n"
+            ]
+        };
+
+        let newbornIndex = 0;
+        let circleIndex = 0;
+
+        // Apply pre-designed prompts and rotate through alternatives
+        function applyPrompt(type) {
+            const textarea = document.getElementById('legacy-textarea');
+            
+            if (type === 'birth-baby') {
+                textarea.value = prompts.newborn[newbornIndex];
+                
+                // Track next index position
+                newbornIndex = (newbornIndex + 1) % prompts.newborn.length;
+                
+                // Update button text to inform user of next state
+                const btn = document.getElementById('btn-newborn');
+                btn.innerText = `To My Newborn (Option ${newbornIndex + 1})`;
+                
+                // Alert client of load state
+                const lastLoaded = newbornIndex === 0 ? prompts.newborn.length : newbornIndex;
+                showToast(`Loaded Newborn Prompt Option ${lastLoaded}`);
+                
+            } else if (type === 'transition-grief') {
+                textarea.value = prompts.circle[circleIndex];
+                
+                // Track next index position
+                circleIndex = (circleIndex + 1) % prompts.circle.length;
+                
+                // Update button text
+                const btn = document.getElementById('btn-circle');
+                btn.innerText = `To My Chosen Circle (Option ${circleIndex + 1})`;
+                
+                // Alert client of load state
+                const lastLoaded = circleIndex === 0 ? prompts.circle.length : circleIndex;
+                showToast(`Loaded Chosen Circle Prompt Option ${lastLoaded}`);
+            }
+        }
+
+        // Copy Legacy letter text to clipboard (WCAG / Fallback integrated copy method)
+        function copyToClipboard() {
+            const textarea = document.getElementById('legacy-textarea');
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = textarea.value;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            showToast("Legacy letter text copied to clipboard!");
+        }
+
+        // Smooth slide-in toast notification
+        function showToast(message) {
+            const announcer = document.getElementById('toast-announcer');
+            if (announcer) {
+                announcer.innerText = message;
+            }
+
+            const notification = document.createElement("div");
+            notification.className = "fixed bottom-6 right-6 bg-charcoal-850 text-cream-50 px-6 py-4 rounded-xl shadow-2xl z-50 transition-all transform translate-y-0 opacity-100 font-medium text-sm border border-charcoal-700 bg-charcoal-800";
+            notification.innerText = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // Handle secure intake consultation submit
+        function handleIntakeSubmit(event) {
+            event.preventDefault();
+            document.getElementById('intake-form').classList.add('hidden');
+            document.getElementById('success-screen').classList.remove('hidden');
+        }
+
+        // Reset form
+        function resetForm() {
+            document.getElementById('intake-form').reset();
+            document.getElementById('intake-form').classList.remove('hidden');
+            document.getElementById('success-screen').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
