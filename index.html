@@ -117,6 +117,7 @@
                     <a href="#thresholds" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">The Thresholds</a>
                     <a href="#services" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Services</a>
                     <a href="#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Credentials</a>
+                    <a href="#testimonials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Testimonials</a>
                     <a href="#connect" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</a>
                 </div>
                 <!-- Mobile menu toggle -->
@@ -131,6 +132,7 @@
             <a href="#thresholds" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">The Thresholds</a>
             <a href="#services" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
             <a href="#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Testimonials</a>
             <a href="#connect" onclick="toggleMobileMenu()" class="block bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</a>
         </div>
     </nav>
@@ -493,6 +495,91 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-cream-50 border-t border-b border-charcoal-800/10 relative overflow-hidden" aria-labelledby="testimonials-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Voices From The Threshold</span>
+                <h2 id="testimonials-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Words of Those Held</h2>
+                <div class="w-16 h-[2px] bg-sage-400 mx-auto mt-4" aria-hidden="true"></div>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative" id="testimonial-carousel">
+                <!-- Loading State -->
+                <div id="testimonials-loading" class="text-center py-16 text-charcoal-500 font-light">
+                    <div class="w-8 h-8 border-2 border-sage-400 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true"></div>
+                    <p class="text-sm">Gathering testimonials…</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="testimonials-error" class="hidden text-center py-16 text-charcoal-500 font-light">
+                    <p class="text-sm italic">Testimonials are unavailable right now. Please check back soon.</p>
+                </div>
+
+                <!-- Slide Display -->
+                <div id="testimonials-display" class="hidden">
+                    <div class="bg-cream-100 rounded-3xl p-10 sm:p-14 shadow-md border border-charcoal-800/5 relative min-h-[220px] flex flex-col justify-center">
+                        <span class="absolute top-6 left-8 text-sage-200 font-serif text-8xl select-none leading-none opacity-50" aria-hidden="true">"</span>
+                        <blockquote id="testimonial-quote" class="font-serif italic text-xl sm:text-2xl text-charcoal-800 leading-relaxed relative z-10 text-center px-4"></blockquote>
+                        <p id="testimonial-author" class="mt-8 text-center font-display text-xs uppercase tracking-widest text-sage-700 font-bold"></p>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="flex items-center justify-center gap-6 mt-8" role="group" aria-label="Testimonial navigation">
+                        <button id="testimonial-prev" onclick="changeTestimonial(-1)" aria-label="Previous testimonial"
+                            class="w-10 h-10 rounded-full border border-charcoal-800/20 flex items-center justify-center text-charcoal-700 hover:bg-charcoal-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <div id="testimonial-dots" class="flex gap-2" aria-hidden="true"></div>
+                        <button id="testimonial-next" onclick="changeTestimonial(1)" aria-label="Next testimonial"
+                            class="w-10 h-10 rounded-full border border-charcoal-800/20 flex items-center justify-center text-charcoal-700 hover:bg-charcoal-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit a Testimonial -->
+            <div class="mt-16 border-t border-charcoal-800/10 pt-12">
+                <div class="text-center mb-8 space-y-2">
+                    <h3 class="font-serif text-2xl text-charcoal-800">Share Your Experience</h3>
+                    <p class="text-sm text-charcoal-600 font-light">Your words may hold space for someone still searching for care.</p>
+                </div>
+
+                <form id="testimonial-form" onsubmit="submitTestimonial(event)" class="max-w-2xl mx-auto space-y-5">
+                    <div>
+                        <label for="t-author" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Your Name</label>
+                        <input id="t-author" type="text" required maxlength="120"
+                            class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm"
+                            placeholder="First name or full name">
+                    </div>
+                    <div>
+                        <label for="t-quote" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Your Testimonial</label>
+                        <textarea id="t-quote" rows="5" required maxlength="1000"
+                            class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm resize-none"
+                            placeholder="Share what your experience with Jennifer meant to you…"></textarea>
+                        <p class="text-right text-xs text-charcoal-400 mt-1"><span id="t-char-count">0</span> / 1000</p>
+                    </div>
+                    <div id="testimonial-submit-error" class="hidden text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3"></div>
+                    <button type="submit" id="t-submit-btn"
+                        class="w-full bg-sage-600 hover:bg-sage-700 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all transform active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed">
+                        Submit Testimonial
+                    </button>
+                </form>
+
+                <div id="testimonial-form-success" class="hidden max-w-2xl mx-auto text-center py-10 space-y-4" role="status" aria-live="polite">
+                    <div class="w-16 h-16 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold" aria-hidden="true">✓</div>
+                    <h4 class="font-serif text-2xl text-charcoal-800">Thank You</h4>
+                    <p class="text-charcoal-600 font-light text-sm max-w-sm mx-auto">Your words have been received and will appear in the carousel above.</p>
+                    <button onclick="resetTestimonialForm()" class="mt-2 text-xs font-semibold uppercase tracking-wider text-sage-700 hover:text-sage-900 underline underline-offset-4 focus-visible:outline-none">Submit another</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Booking / Contact Intake Portal -->
     <section id="connect" class="py-24 sm:py-32 bg-cream-50 text-[#1C2321] relative" aria-labelledby="connect-heading">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -581,6 +668,142 @@
     <!-- Front-End Javascript for Interactive Features -->
     <script>
 
+        // Testimonials carousel
+        const SUPABASE_URL = 'https://zmjrlezcjwolzvvzglvi.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptanJsZXpjandvbHp2dnpnbHZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MTQ4NTQsImV4cCI6MjA3MjQ5MDg1NH0.JRcNdAUC4ZLB7bCLwXEXeyr_sV2nQ7k_XY11TV_AooU';
+
+        let testimonials = [];
+        let currentIndex = 0;
+
+        async function fetchTestimonials() {
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/testimonials?select=quote,author&order=created_at.asc`, {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    }
+                });
+                if (!res.ok) throw new Error('Fetch failed');
+                const data = await res.json();
+                document.getElementById('testimonials-loading').classList.add('hidden');
+                if (!data.length) {
+                    document.getElementById('testimonials-error').classList.remove('hidden');
+                    return;
+                }
+                testimonials = data;
+                buildDots();
+                renderTestimonial(0);
+                document.getElementById('testimonials-display').classList.remove('hidden');
+            } catch {
+                document.getElementById('testimonials-loading').classList.add('hidden');
+                document.getElementById('testimonials-error').classList.remove('hidden');
+            }
+        }
+
+        function buildDots() {
+            const container = document.getElementById('testimonial-dots');
+            container.innerHTML = '';
+            testimonials.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 ${i === 0 ? 'bg-charcoal-800 w-4' : 'bg-charcoal-800/20'}`;
+                dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+                dot.onclick = () => { currentIndex = i; renderTestimonial(i); };
+                container.appendChild(dot);
+            });
+        }
+
+        function renderTestimonial(index) {
+            const t = testimonials[index];
+            const quoteEl = document.getElementById('testimonial-quote');
+            const authorEl = document.getElementById('testimonial-author');
+            quoteEl.style.opacity = '0';
+            authorEl.style.opacity = '0';
+            setTimeout(() => {
+                quoteEl.textContent = t.quote;
+                authorEl.textContent = '— ' + t.author;
+                quoteEl.style.transition = 'opacity 0.4s ease';
+                authorEl.style.transition = 'opacity 0.4s ease';
+                quoteEl.style.opacity = '1';
+                authorEl.style.opacity = '1';
+            }, 200);
+            document.querySelectorAll('#testimonial-dots button').forEach((dot, i) => {
+                dot.className = `rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 ${i === index ? 'bg-charcoal-800 w-4 h-2' : 'bg-charcoal-800/20 w-2 h-2'}`;
+            });
+        }
+
+        function changeTestimonial(dir) {
+            currentIndex = (currentIndex + dir + testimonials.length) % testimonials.length;
+            renderTestimonial(currentIndex);
+        }
+
+        fetchTestimonials();
+
+        // Character counter for testimonial textarea
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.getElementById('t-quote');
+            const counter = document.getElementById('t-char-count');
+            if (textarea && counter) {
+                textarea.addEventListener('input', () => {
+                    counter.textContent = textarea.value.length;
+                });
+            }
+        });
+
+        async function submitTestimonial(event) {
+            event.preventDefault();
+            const author = document.getElementById('t-author').value.trim();
+            const quote = document.getElementById('t-quote').value.trim();
+            const btn = document.getElementById('t-submit-btn');
+            const errorEl = document.getElementById('testimonial-submit-error');
+
+            errorEl.classList.add('hidden');
+            btn.disabled = true;
+            btn.textContent = 'Submitting…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/testimonials`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ author, quote }),
+                });
+
+                if (res.status === 409) {
+                    throw new Error('A testimonial from that name already exists. Try a different name.');
+                }
+                if (!res.ok) {
+                    throw new Error('Something went wrong. Please try again.');
+                }
+
+                // Add to local carousel immediately
+                testimonials.push({ author, quote });
+                buildDots();
+                currentIndex = testimonials.length - 1;
+                renderTestimonial(currentIndex);
+
+                document.getElementById('testimonial-form').classList.add('hidden');
+                document.getElementById('testimonial-form-success').classList.remove('hidden');
+            } catch (err) {
+                errorEl.textContent = err.message;
+                errorEl.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit Testimonial';
+            }
+        }
+
+        function resetTestimonialForm() {
+            document.getElementById('testimonial-form').reset();
+            document.getElementById('t-char-count').textContent = '0';
+            document.getElementById('testimonial-submit-error').classList.add('hidden');
+            document.getElementById('testimonial-form').classList.remove('hidden');
+            document.getElementById('testimonial-form-success').classList.add('hidden');
+        }
+
         // Toggle mobile nav screen
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -618,10 +841,45 @@
         }
 
         // Handle secure intake consultation submit
-        function handleIntakeSubmit(event) {
+        async function handleIntakeSubmit(event) {
             event.preventDefault();
-            document.getElementById('intake-form').classList.add('hidden');
-            document.getElementById('success-screen').classList.remove('hidden');
+            const btn = event.target.querySelector('button[type="submit"]');
+            const name = document.getElementById('form-name').value.trim();
+            const email = document.getElementById('form-email').value.trim();
+            const threshold = document.getElementById('form-threshold-select').value;
+            const timeline = document.getElementById('form-timeline').value.trim();
+            const userMessage = document.getElementById('form-message').value.trim();
+
+            const messageParts = [`Threshold: ${threshold}`];
+            if (timeline) messageParts.push(`Timeline: ${timeline}`);
+            if (userMessage) messageParts.push(`Message: ${userMessage}`);
+            const message = messageParts.join('\n');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!res.ok) throw new Error();
+
+                document.getElementById('intake-form').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+            } catch {
+                showToast('Something went wrong. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Secure Message';
+            }
         }
 
         // Reset form
