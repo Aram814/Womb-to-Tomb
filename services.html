@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Womb to Tomb: Birth Doula & End-of-Life Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e6edea',
+                            200: '#cfddd6',
+                            300: '#adc3b7',
+                            400: '#8d9f87', /* Exact Brand Sage from Logo */
+                            500: '#6d8c7c',
+                            600: '#547061',
+                            700: '#43584c',
+                            800: '#35463d',
+                            900: '#2c3932',
+                        },
+                        charcoal: {
+                            50: '#f6f6f7',
+                            100: '#ececed',
+                            200: '#d5d6d9',
+                            300: '#b1b3b9',
+                            400: '#858892',
+                            500: '#646772',
+                            600: '#4e505a',
+                            700: '#3f414a',
+                            800: '#1C2321', /* Brand Dark Accent */
+                            900: '#151918',
+                        },
+                        cream: {
+                            50: '#faf9f6',
+                            100: '#F4F1EA', /* Warm Accent Base */
+                            200: '#e8e2d4',
+                            300: '#d5cbb5',
+                            400: '#bea18d',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8d9f87;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6d8c7c;
+        }
+        .blur-backdrop {
+            backdrop-filter: blur(12px);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Custom screen-reader skip link */
+        .skip-link:focus {
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-charcoal-800 font-sans selection:bg-charcoal-800 selection:text-white overflow-x-hidden">
+
+    <!-- Skip to Content Link (Keyboard Navigation only) -->
+    <a href="#main-content" class="skip-link absolute -top-16 left-0 bg-charcoal-800 text-cream-50 px-6 py-4 rounded-b-xl font-bold tracking-wider uppercase text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-400">
+        Skip to main content
+    </a>
+
+    <!-- Navigation (Blended seamlessly into the top Sage header background) -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#8d9f87] transition-all duration-300" aria-label="Main Site Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg p-1 block">
+                        <img src="Logo.png"
+                             alt="Womb to Tomb Logo"
+                             class="h-12 w-auto object-contain">
+                    </a>
+                </div>
+                <!-- Main Nav Links -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="index.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Home</a>
+                    <a href="services.html" aria-current="page" class="text-charcoal-900 font-bold underline underline-offset-4 tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Services</a>
+                    <a href="index.html#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Credentials</a>
+                    <a href="index.html#testimonials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Testimonials</a>
+                    <a href="gallery.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Gallery</a>
+                    <a href="#connect" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</a>
+                </div>
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-charcoal-800 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#8d9f87] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Home</a>
+            <a href="services.html" onclick="toggleMobileMenu()" class="block text-charcoal-900 underline underline-offset-4 text-base py-2 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
+            <a href="index.html#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
+            <a href="index.html#testimonials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Testimonials</a>
+            <a href="gallery.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Gallery</a>
+            <a href="#connect" onclick="toggleMobileMenu()" class="block bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Top spacer to clear the fixed nav bar on this standalone page -->
+    <div id="main-content" class="pt-20" aria-hidden="true"></div>
+
+    <!-- Twin-Gates Framework -->
+    <section id="thresholds" class="py-24 bg-cream-100 relative overflow-hidden" aria-labelledby="thresholds-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-charcoal-600 uppercase font-bold">Comprehensive Offerings</span>
+                <h2 id="thresholds-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Womb &amp; Tomb Frameworks</h2>
+                <p class="text-charcoal-600 font-light max-w-xl mx-auto">Two hemispheres of the exact same life cycle, tended to with identical integrity, safety, and emotional balance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- Birth Column -->
+                <div class="bg-cream-50 rounded-3xl p-8 sm:p-12 shadow-md border border-sage-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative group">
+                    <div>
+                        <div class="w-16 h-16 bg-sage-100 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-3xl text-charcoal-900 mb-2">Birth &amp; Pre-Birth Care</h3>
+                        <p class="font-display text-xs uppercase tracking-widest text-sage-700 font-semibold mb-6">Physiological Childbirth Support</p>
+
+                        <p class="font-light text-charcoal-700 leading-relaxed mb-8">
+                            A dedicated, continuous support dynamic focused on helping your nervous system relax so your birthing physiology can perform dynamically. Protecting your decisions, your rhythm, and your family's intimacy.
+                        </p>
+
+                        <div class="space-y-4 border-t border-charcoal-800/10 pt-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-600" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-charcoal-800">Protecting the Birth Chamber</h4>
+                                    <p class="text-sm font-light text-charcoal-600">Proactively shielding you and your birth companion from unnecessary ambient stressors.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-600" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-charcoal-800">Holistic Labor Support</h4>
+                                    <p class="text-sm font-light text-charcoal-600">Continuous movement support, water therapies, positioning, and intuitive comforting touch.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#services" class="inline-flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 rounded-lg py-1 px-2">
+                            Learn More About Birth Care <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Death Column -->
+                <div class="bg-[#1C2321] rounded-3xl p-8 sm:p-12 shadow-xl shadow-charcoal-900/40 border border-charcoal-800 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 text-cream-50 relative group">
+                    <div>
+                        <!-- Replaced sun/half-sun with high quality crescent moon SVG -->
+                        <div class="w-16 h-16 bg-charcoal-800 rounded-2xl flex items-center justify-center mb-8">
+                            <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-3xl text-cream-100 mb-2">End-of-Life &amp; Vigil Care</h3>
+                        <p class="font-display text-xs uppercase tracking-widest text-sage-400 font-semibold mb-6">Conscious End-of-Life Planning &amp; Vigil</p>
+
+                        <p class="font-light text-cream-200/80 leading-relaxed mb-8">
+                            A highly protective, somatic, and spiritual presence focused on crafting a serene, beautifully coordinated transition. Helping your close circle carry your dignity and voice when they are needed most.
+                        </p>
+
+                        <div class="space-y-4 border-t border-cream-100/10 pt-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cream-100">Advance Vigil Directives</h4>
+                                    <p class="text-sm font-light text-cream-200/60">Structuring sound, beautiful frameworks to govern environmental comfort, touch, and lighting.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="mt-1 text-sage-400" aria-hidden="true">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-cream-100">Legacy and Life Review</h4>
+                                    <p class="text-sm font-light text-cream-200/60">Using structural conversations, recordings, and customized project work to organize your lifetime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#services" class="inline-flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-sage-400 hover:text-sage-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 focus-visible:ring-offset-2 rounded-lg py-1 px-2">
+                            Learn More About End-of-Life Support <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brand Services Section -->
+    <section id="services" class="py-24 bg-cream-50 relative overflow-hidden border-t border-b border-charcoal-800/10" aria-labelledby="services-heading">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="text-center mb-16 space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Offerings &amp; Support Tiers</span>
+                <h2 id="services-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Support Offerings</h2>
+                <p class="text-charcoal-600 font-light max-w-xl mx-auto">Comprehensive, professional packages designed to provide stability, continuity, and deep physical presence through life's primary thresholds.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-sage-700 font-semibold">Birth &amp; Pre-Birth Care</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">Birth Doula Complete Support</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Full, continuous care starting in early pregnancy. Includes prenatal educational alignments, physiological birthing map design, continuous on-call bedside presence starting at 38 weeks, active labor somatic touch comfort measures, and warm postpartum support.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Tethered Package</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-charcoal-600 font-semibold">End-of-Life, Vigil &amp; Grief Care</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">End-of-Life Vigil Care</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Support plans for active dying vigils. Providing somatic anchors, emotional counsel for loved ones, structuring legal/administrative advance directives, legacy record coordination, and sensitive, continuous bedside vigil attendance.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Tethered Package</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-charcoal-700 hover:text-charcoal-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cream-100 rounded-3xl p-8 border border-charcoal-800/5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-xs uppercase font-mono tracking-widest text-sage-700 font-semibold">Somatic Balance</div>
+                        <h3 class="font-serif text-2xl text-charcoal-900 leading-snug">Somatic Integration &amp; Reiki</h3>
+                        <p class="text-sm text-charcoal-600 font-light leading-relaxed">
+                            Dedicated private sessions combining certified Usui Reiki energy alignments, comforting Raindrop organic essential oil therapies, and physical mind-body somatic methods designed to naturally down-regulate environmental nervous tension.
+                        </p>
+                    </div>
+                    <div class="border-t border-charcoal-800/10 mt-8 pt-4 flex justify-between items-center">
+                        <span class="text-xs text-charcoal-600 font-semibold">Individual Sessions</span>
+                        <a href="#connect" class="text-xs font-bold uppercase tracking-wider text-sage-700 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 rounded px-2 py-1">Inquire Details →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking / Contact Intake Portal -->
+    <section id="connect" class="py-24 sm:py-32 bg-cream-50 text-[#1C2321] relative" aria-labelledby="connect-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+            <div class="text-center space-y-3">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold">Initiate Connection</span>
+                <h2 id="connect-heading" class="font-serif text-4xl sm:text-5xl text-charcoal-800">Protected Consultation Intake</h2>
+                <p class="text-charcoal-600 font-light max-w-md mx-auto">
+                    Share your details below. Let me hold space as we navigate your family's upcoming transition.
+                </p>
+            </div>
+
+            <!-- Booking form content -->
+            <div id="booking-container" class="bg-cream-100 rounded-3xl p-8 sm:p-12 shadow-md border border-charcoal-800/10">
+                <form id="intake-form" onsubmit="handleIntakeSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="form-name" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Preferred Name</label>
+                            <input id="form-name" type="text" required class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="form-email" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Email Address</label>
+                            <input id="form-email" type="email" required class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="name@domain.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="form-threshold-select" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Primary Threshold Focus</label>
+                            <select id="form-threshold-select" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm">
+                                <option>Birth &amp; Pre-Birth Doula Care</option>
+                                <option>End-of-Life, Vigil &amp; Grief Care</option>
+                                <option>Somatic / Integrated Healing Arts Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="form-timeline" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Expected Timeline / Target Date</label>
+                            <input id="form-timeline" type="text" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="e.g., Spring 2026 / Imminent Support">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="form-message" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Detailed Narrative or Special Directives</label>
+                        <textarea id="form-message" rows="5" class="w-full bg-cream-50/50 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Please feel free to share what your heart demands at this threshold..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-charcoal-800 hover:bg-sage-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all transform active:scale-[0.99]">
+                        Send Secure Message
+                    </button>
+                </form>
+
+                <!-- Success Screen -->
+                <div id="success-screen" class="hidden text-center py-12 space-y-6" role="status" aria-live="polite">
+                    <div class="w-20 h-20 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold" aria-hidden="true">
+                        ✓
+                    </div>
+                    <h3 class="font-serif text-3xl text-charcoal-900">Your Inquiry is Anchored</h3>
+                    <p class="text-charcoal-600 font-light max-w-md mx-auto">
+                        Thank you for sharing your heart. Jennifer will personally review your information and respond securely within 24 hours.
+                    </p>
+                    <button onclick="resetForm()" class="bg-charcoal-100 hover:bg-charcoal-200 text-charcoal-800 px-6 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">
+                        Submit Another Request
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-charcoal-900 text-cream-100/50 py-12 border-t border-charcoal-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <p class="text-center font-light text-xs sm:text-sm">
+                &copy; 2026 Womb to Tomb Care. Dual certified birth and end-of-life care. All rights reserved.<br>
+                <small>Designed by ARDesigns&copy</small>
+            </p>
+            <div class="flex gap-4">
+                <a href="index.html" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sage-400 rounded-lg px-2 py-1">Back to Home</a>
+                <a href="#main-content" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sage-400 rounded-lg px-2 py-1">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Wrapper for screen readers -->
+    <div id="toast-announcer" class="sr-only" aria-live="polite"></div>
+
+    <!-- Front-End Javascript -->
+    <script>
+        const SUPABASE_URL = 'https://zmjrlezcjwolzvvzglvi.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptanJsZXpjandvbHp2dnpnbHZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MTQ4NTQsImV4cCI6MjA3MjQ5MDg1NH0.JRcNdAUC4ZLB7bCLwXEXeyr_sV2nQ7k_XY11TV_AooU';
+
+        // Toggle mobile nav screen
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const btn = document.getElementById('mobile-menu-btn');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Smooth slide-in toast notification
+        function showToast(message) {
+            const announcer = document.getElementById('toast-announcer');
+            if (announcer) {
+                announcer.innerText = message;
+            }
+
+            const notification = document.createElement("div");
+            notification.className = "fixed bottom-6 right-6 bg-charcoal-850 text-cream-50 px-6 py-4 rounded-xl shadow-2xl z-50 transition-all transform translate-y-0 opacity-100 font-medium text-sm border border-charcoal-700 bg-charcoal-800";
+            notification.innerText = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // Handle secure intake consultation submit
+        async function handleIntakeSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const name = document.getElementById('form-name').value.trim();
+            const email = document.getElementById('form-email').value.trim();
+            const threshold = document.getElementById('form-threshold-select').value;
+            const timeline = document.getElementById('form-timeline').value.trim();
+            const userMessage = document.getElementById('form-message').value.trim();
+
+            const messageParts = [`Threshold: ${threshold}`];
+            if (timeline) messageParts.push(`Timeline: ${timeline}`);
+            if (userMessage) messageParts.push(`Message: ${userMessage}`);
+            const message = messageParts.join('\n');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!res.ok) throw new Error();
+
+                document.getElementById('intake-form').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+            } catch {
+                showToast('Something went wrong. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Secure Message';
+            }
+        }
+
+        // Reset form
+        function resetForm() {
+            document.getElementById('intake-form').reset();
+            document.getElementById('intake-form').classList.remove('hidden');
+            document.getElementById('success-screen').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

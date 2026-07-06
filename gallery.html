@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Womb to Tomb: Birth Doula & End-of-Life Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e6edea',
+                            200: '#cfddd6',
+                            300: '#adc3b7',
+                            400: '#8d9f87', /* Exact Brand Sage from Logo */
+                            500: '#6d8c7c',
+                            600: '#547061',
+                            700: '#43584c',
+                            800: '#35463d',
+                            900: '#2c3932',
+                        },
+                        charcoal: {
+                            50: '#f6f6f7',
+                            100: '#ececed',
+                            200: '#d5d6d9',
+                            300: '#b1b3b9',
+                            400: '#858892',
+                            500: '#646772',
+                            600: '#4e505a',
+                            700: '#3f414a',
+                            800: '#1C2321', /* Brand Dark Accent */
+                            900: '#151918',
+                        },
+                        cream: {
+                            50: '#faf9f6',
+                            100: '#F4F1EA', /* Warm Accent Base */
+                            200: '#e8e2d4',
+                            300: '#d5cbb5',
+                            400: '#bea18d',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8d9f87;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6d8c7c;
+        }
+        .blur-backdrop {
+            backdrop-filter: blur(12px);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Custom screen-reader skip link */
+        .skip-link:focus {
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        /* Gallery tile fade-in on load */
+        .gallery-tile {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        /* Lightbox */
+        #lightbox {
+            backdrop-filter: blur(6px);
+        }
+        #lightbox img {
+            max-height: 88vh;
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-charcoal-800 font-sans selection:bg-charcoal-800 selection:text-white overflow-x-hidden">
+
+    <!-- Skip to Content Link (Keyboard Navigation only) -->
+    <a href="#main-content" class="skip-link absolute -top-16 left-0 bg-charcoal-800 text-cream-50 px-6 py-4 rounded-b-xl font-bold tracking-wider uppercase text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-400">
+        Skip to main content
+    </a>
+
+    <!-- Navigation (Blended seamlessly into the top Sage header background) -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#8d9f87] transition-all duration-300" aria-label="Main Site Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg p-1 block">
+                        <img src="Logo.png"
+                             alt="Womb to Tomb Logo"
+                             class="h-12 w-auto object-contain">
+                    </a>
+                </div>
+                <!-- Main Nav Links -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="index.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Home</a>
+                    <a href="services.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Services</a>
+                    <a href="index.html#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Credentials</a>
+                    <a href="index.html#testimonials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Testimonials</a>
+                    <a href="gallery.html" aria-current="page" class="text-charcoal-900 font-bold underline underline-offset-4 tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Gallery</a>
+                    <a href="services.html#connect" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</a>
+                </div>
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-charcoal-800 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#8d9f87] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Home</a>
+            <a href="services.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
+            <a href="index.html#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
+            <a href="index.html#testimonials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Testimonials</a>
+            <a href="gallery.html" aria-current="page" onclick="toggleMobileMenu()" class="block text-charcoal-900 underline underline-offset-4 text-base py-2 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Gallery</a>
+            <a href="services.html#connect" onclick="toggleMobileMenu()" class="block bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <header id="main-content" class="bg-[#8d9f87] pt-40 pb-16 flex flex-col items-center justify-center relative overflow-hidden text-center px-4">
+        <div class="relative z-10 max-w-3xl mx-auto fade-in-up space-y-5">
+            <span class="font-display tracking-[0.25em] text-xs sm:text-sm font-bold text-charcoal-800/90 uppercase">
+                Womb &amp; Tomb &nbsp;•&nbsp; A Visual Record
+            </span>
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-900 italic font-light leading-tight">
+                The Gallery
+            </h1>
+            <p class="font-sans text-base sm:text-lg text-charcoal-800/90 font-light leading-relaxed max-w-xl mx-auto">
+                Glimpses from the thresholds — the quiet moments, the held hands, the beginnings and endings that make up a life fully witnessed.
+            </p>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="py-20 sm:py-24 bg-cream-100" aria-labelledby="gallery-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="gallery-heading" class="sr-only">Photo Gallery</h2>
+            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                <!-- Tiles injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-charcoal-900/90 flex items-center justify-center px-4" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button id="lightbox-close" aria-label="Close image viewer" class="absolute top-5 right-5 sm:top-8 sm:right-8 text-cream-50 hover:text-sage-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 rounded-full p-2">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button id="lightbox-prev" aria-label="Previous image" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-cream-50 hover:text-sage-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 rounded-full p-2 sm:p-3 bg-charcoal-800/40 hover:bg-charcoal-800/70 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-w-full rounded-lg shadow-2xl">
+        <button id="lightbox-next" aria-label="Next image" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-cream-50 hover:text-sage-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-400 rounded-full p-2 sm:p-3 bg-charcoal-800/40 hover:bg-charcoal-800/70 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <p id="lightbox-counter" class="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 text-cream-100/80 text-xs font-display tracking-widest uppercase"></p>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="bg-charcoal-900 text-cream-100/50 py-12 border-t border-charcoal-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <p class="text-center font-light text-xs sm:text-sm">
+                &copy; 2026 Womb to Tomb Care. Dual certified birth and end-of-life care. All rights reserved.<br>
+                <small>Designed by ARDesigns&copy</small>
+            </p>
+            <div class="flex gap-4">
+                <a href="index.html" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sage-400 rounded-lg px-2 py-1">Back to Home</a>
+                <a href="#main-content" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sage-400 rounded-lg px-2 py-1">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Front-End Javascript -->
+    <script>
+        // Total number of gallery-XX.jpg files in /gallery-images
+        const TOTAL_IMAGES = 28;
+        const images = Array.from({ length: TOTAL_IMAGES }, (_, i) => {
+            const num = String(i + 1).padStart(2, '0');
+            return `gallery-images/gallery-${num}.jpg`;
+        });
+
+        const grid = document.getElementById('gallery-grid');
+        images.forEach((src, i) => {
+            const tile = document.createElement('button');
+            tile.className = 'gallery-tile group relative aspect-square overflow-hidden rounded-xl bg-cream-200 shadow-sm hover:shadow-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2';
+            tile.style.animationDelay = `${(i % 8) * 60}ms`;
+            tile.setAttribute('aria-label', `Open image ${i + 1} of ${images.length}`);
+            tile.innerHTML = `
+                <img src="${src}" alt="Womb to Tomb gallery photo ${i + 1}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute inset-0 bg-charcoal-900/0 group-hover:bg-charcoal-900/20 transition-colors"></span>
+            `;
+            tile.addEventListener('click', () => openLightbox(i));
+            grid.appendChild(tile);
+        });
+
+        let currentIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        function openLightbox(index) {
+            currentIndex = index;
+            renderLightbox();
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('lightbox-close').focus();
+        }
+
+        function renderLightbox() {
+            lightboxImg.src = images[currentIndex];
+            lightboxImg.alt = `Womb to Tomb gallery photo ${currentIndex + 1}`;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            renderLightbox();
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % images.length;
+            renderLightbox();
+        }
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+        document.getElementById('lightbox-next').addEventListener('click', showNext);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+
+        // Toggle mobile nav screen
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const btn = document.getElementById('mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+    </script>
+</body>
+</html>
