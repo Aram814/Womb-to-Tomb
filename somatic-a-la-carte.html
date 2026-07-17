@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À La Carte &amp; Specialized Support | Somatic Integration &amp; Reiki | Womb to Tomb</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Parisienne&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f7fbf8',
+                            100: '#edf4ef',
+                            200: '#e3eee6',
+                            300: '#d9e7dc',
+                            400: '#cfe0d3',
+                            500: '#a8bfae',
+                            600: '#7f9686',
+                            700: '#55705f',
+                            800: '#3c4f42',
+                            900: '#26332b',
+                        },
+                        charcoal: {
+                            50: '#f8f5f3',
+                            100: '#e4ddd8',
+                            200: '#d0c4be',
+                            300: '#bcaca3',
+                            400: '#a79488',
+                            500: '#967f71',
+                            600: '#856a5a',
+                            700: '#745543',
+                            800: '#684734',
+                            900: '#4a3830',
+                        },
+                        cream: {
+                            50: '#fdfbf9',
+                            100: '#f5f0ea',
+                            200: '#eae5e1',
+                            300: '#d9cdbe',
+                            400: '#bea18d',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f5f0ea; }
+        ::-webkit-scrollbar-thumb { background: #cfe0d3; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8bfae; }
+        .blur-backdrop { backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-cream-100 text-charcoal-800 font-sans selection:bg-charcoal-800 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation (matches site-wide nav; this page is intentionally not listed here) -->
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#cfe0d3] transition-all duration-300" aria-label="Main Site Navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg p-1 block">
+                        <img src="Logo.png" alt="Womb to Tomb Logo" class="h-12 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                    <a href="index.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all rounded-lg px-2 py-1">Home</a>
+                    <a href="services.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all rounded-lg px-2 py-1">Services</a>
+                    <a href="index.html#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all rounded-lg px-2 py-1">Credentials</a>
+                    <a href="index.html#testimonials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all rounded-lg px-2 py-1">Testimonials</a>
+                    <a href="gallery.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all rounded-lg px-2 py-1">Gallery</a>
+                    <button type="button" onclick="openConnectModal()" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all">Get in Touch</button>
+                </div>
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-charcoal-800 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#cfe0d3] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Home</a>
+            <a href="services.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
+            <a href="index.html#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
+            <a href="index.html#testimonials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Testimonials</a>
+            <a href="gallery.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Gallery</a>
+            <button type="button" onclick="toggleMobileMenu(); openConnectModal();" class="block w-full bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</button>
+        </div>
+    </nav>
+
+    <div class="pt-20" aria-hidden="true"></div>
+
+    <!-- Hero -->
+    <header class="bg-[#cfe0d3] pt-16 pb-14 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl mx-auto px-4">
+            <a href="services.html" class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-charcoal-800 hover:text-charcoal-900 mb-6">
+                <span aria-hidden="true">←</span> Back to Services
+            </a>
+            <span class="font-display text-xs tracking-widest text-charcoal-800 uppercase font-bold block mb-2">Somatic Balance</span>
+            <h1 class="font-serif text-4xl sm:text-5xl text-charcoal-900">À La Carte &amp; Specialized Support</h1>
+        </div>
+    </header>
+
+    <!-- Placeholder Content -->
+    <section class="py-24 bg-cream-100">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-cream-200 rounded-3xl p-10 sm:p-14 border border-charcoal-800/5 shadow-sm">
+                <h2 class="font-serif text-2xl sm:text-3xl text-charcoal-900">More to Come Soon</h2>
+                <p class="mt-4 text-charcoal-700 font-light leading-relaxed">
+                    We're still crafting the individual à la carte offerings for somatic integration and reiki. In the meantime, please reach out directly — Jennifer would love to talk through exactly what your family needs.
+                </p>
+                <button onclick="openBookingModal()" class="inline-flex items-center gap-2 mt-8 bg-charcoal-800 text-cream-50 px-7 py-3.5 rounded-xl text-sm font-bold tracking-wider uppercase hover:bg-charcoal-900 transition-all shadow-md">
+                    Contact Jennifer <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-charcoal-900 text-cream-100/50 py-12 border-t border-charcoal-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <p class="text-center font-light text-xs sm:text-sm">
+                &copy; 2026 Womb to Tomb Care. Dual certified birth and end-of-life care. All rights reserved.<br>
+                <small>Designed by ARDesigns&copy</small>
+            </p>
+            <div class="flex gap-4">
+                <a href="services.html" class="hover:text-white rounded-lg px-2 py-1">Back to Services</a>
+                <a href="index.html" class="hover:text-white rounded-lg px-2 py-1">Back to Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Connect / Get in Touch Modal -->
+    <div id="connect-modal" class="hidden fixed inset-0 z-[70] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="connect-modal-heading">
+        <div class="absolute inset-0 bg-charcoal-900/60" onclick="closeConnectModal()" aria-hidden="true"></div>
+        <div class="relative bg-cream-50 rounded-3xl shadow-2xl max-w-lg w-full mx-auto p-6 sm:p-10 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeConnectModal()" aria-label="Close contact form" class="absolute top-4 right-4 text-charcoal-500 hover:text-charcoal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-full p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div id="connect-form-wrap">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold block mb-1">Initiate Connection</span>
+                <h2 id="connect-modal-heading" class="font-serif text-2xl sm:text-3xl text-charcoal-900 mb-1">Protected Consultation Intake</h2>
+                <p class="text-sm text-charcoal-600 font-light mb-6">Share your details below. Let me hold space as we navigate your family's upcoming transition.</p>
+
+                <form id="connect-form" onsubmit="handleConnectSubmit(event)" class="space-y-5">
+                    <div>
+                        <label for="connect-name" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Preferred Name</label>
+                        <input id="connect-name" type="text" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="connect-email" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Email Address</label>
+                        <input id="connect-email" type="email" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="name@domain.com">
+                    </div>
+                    <div>
+                        <label for="connect-threshold" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Primary Care Focus</label>
+                        <select id="connect-threshold" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm">
+                            <option>Birth &amp; Pre-Birth Doula Care</option>
+                            <option>End-of-Life, Vigil &amp; Grief Care</option>
+                            <option>Somatic / Integrated Healing Arts Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="connect-timeline" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Expected Timeline / Target Date</label>
+                        <input id="connect-timeline" type="text" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="e.g., Spring 2026 / Imminent Support">
+                    </div>
+                    <div>
+                        <label for="connect-message" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Detailed Narrative or Special Directives</label>
+                        <textarea id="connect-message" rows="4" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Please feel free to share what your heart demands at this threshold..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-charcoal-800 hover:bg-sage-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md transition-all transform active:scale-[0.99]">
+                        Send Secure Message
+                    </button>
+                </form>
+            </div>
+
+            <div id="connect-success" class="hidden text-center py-8 space-y-5" role="status" aria-live="polite">
+                <div class="w-16 h-16 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold" aria-hidden="true">✓</div>
+                <h3 class="font-serif text-2xl text-charcoal-900">Your Inquiry is Anchored</h3>
+                <p class="text-charcoal-600 font-light text-sm max-w-xs mx-auto">Thank you for sharing your heart. Jennifer will personally review your information and respond securely within approximately 24 hours.</p>
+                <button onclick="closeConnectModal()" class="bg-charcoal-100 hover:bg-charcoal-200 text-charcoal-800 px-6 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Now Modal -->
+    <div id="booking-modal" class="hidden fixed inset-0 z-[70] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="booking-modal-heading">
+        <div class="absolute inset-0 bg-charcoal-900/60" onclick="closeBookingModal()" aria-hidden="true"></div>
+        <div class="relative bg-cream-50 rounded-3xl shadow-2xl max-w-lg w-full mx-auto p-6 sm:p-10 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeBookingModal()" aria-label="Close booking form" class="absolute top-4 right-4 text-charcoal-500 hover:text-charcoal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-full p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div id="booking-form-wrap">
+                <h2 id="booking-modal-heading" class="font-serif text-2xl sm:text-3xl text-charcoal-900 mb-1">Book Your Care</h2>
+                <p class="text-sm text-charcoal-600 font-light mb-6">Share a few details and Jennifer will personally follow up within 24 hours.</p>
+
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-5">
+                    <div>
+                        <label for="booking-name" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Preferred Name</label>
+                        <input id="booking-name" type="text" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="booking-email" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Email Address</label>
+                        <input id="booking-email" type="email" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="name@domain.com">
+                    </div>
+                    <div>
+                        <label for="booking-package" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Care Package</label>
+                        <select id="booking-package" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm">
+                            <option>Somatic Care</option>
+                            <option>Something Else</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="booking-date" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Time / Date</label>
+                        <input id="booking-date" type="text" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="e.g., preferred start date">
+                    </div>
+                    <div>
+                        <label for="booking-details" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Details</label>
+                        <textarea id="booking-details" rows="4" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Anything else Jennifer should know..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-charcoal-800 hover:bg-sage-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md transition-all transform active:scale-[0.99]">
+                        Send Booking Request
+                    </button>
+                </form>
+            </div>
+
+            <div id="booking-success" class="hidden text-center py-8 space-y-5" role="status" aria-live="polite">
+                <div class="w-16 h-16 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold" aria-hidden="true">✓</div>
+                <h3 class="font-serif text-2xl text-charcoal-900">Request Received</h3>
+                <p class="text-charcoal-600 font-light text-sm max-w-xs mx-auto">Thank you! Jennifer will personally review your details and respond within 24 hours.</p>
+                <button onclick="closeBookingModal()" class="bg-charcoal-100 hover:bg-charcoal-200 text-charcoal-800 px-6 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Wrapper for screen readers -->
+    <div id="toast-announcer" class="sr-only" aria-live="polite"></div>
+
+    <script>
+        const SUPABASE_URL = 'https://zmjrlezcjwolzvvzglvi.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptanJsZXpjandvbHp2dnpnbHZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5MTQ4NTQsImV4cCI6MjA3MjQ5MDg1NH0.JRcNdAUC4ZLB7bCLwXEXeyr_sV2nQ7k_XY11TV_AooU';
+
+        // Toggle mobile nav screen
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const btn = document.getElementById('mobile-menu-btn');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Connect / Get in Touch modal
+        function connectEscHandler(e) {
+            if (e.key === 'Escape') closeConnectModal();
+        }
+
+        function openConnectModal() {
+            document.getElementById('connect-form-wrap').classList.remove('hidden');
+            document.getElementById('connect-success').classList.add('hidden');
+            document.getElementById('connect-form').reset();
+            const modal = document.getElementById('connect-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            document.addEventListener('keydown', connectEscHandler);
+            document.getElementById('connect-name').focus();
+        }
+
+        function closeConnectModal() {
+            const modal = document.getElementById('connect-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+            document.removeEventListener('keydown', connectEscHandler);
+        }
+
+        async function handleConnectSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const name = document.getElementById('connect-name').value.trim();
+            const email = document.getElementById('connect-email').value.trim();
+            const threshold = document.getElementById('connect-threshold').value;
+            const timeline = document.getElementById('connect-timeline').value.trim();
+            const userMessage = document.getElementById('connect-message').value.trim();
+
+            const messageParts = [`Threshold: ${threshold}`];
+            if (timeline) messageParts.push(`Timeline: ${timeline}`);
+            if (userMessage) messageParts.push(`Message: ${userMessage}`);
+            const message = messageParts.join('\n');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!res.ok) throw new Error();
+
+                document.getElementById('connect-form-wrap').classList.add('hidden');
+                document.getElementById('connect-success').classList.remove('hidden');
+            } catch {
+                showToast('Something went wrong. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Secure Message';
+            }
+        }
+
+        function bookingEscHandler(e) {
+            if (e.key === 'Escape') closeBookingModal();
+        }
+
+        function openBookingModal() {
+            document.getElementById('booking-form-wrap').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('hidden');
+            document.getElementById('booking-form').reset();
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            document.addEventListener('keydown', bookingEscHandler);
+            document.getElementById('booking-name').focus();
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+            document.removeEventListener('keydown', bookingEscHandler);
+        }
+
+        function showToast(message) {
+            const announcer = document.getElementById('toast-announcer');
+            if (announcer) announcer.innerText = message;
+
+            const notification = document.createElement("div");
+            notification.className = "fixed bottom-6 right-6 bg-charcoal-800 text-cream-50 px-6 py-4 rounded-xl shadow-2xl z-[80] transition-all transform translate-y-0 opacity-100 font-medium text-sm border border-charcoal-700";
+            notification.innerText = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        async function handleBookingSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const name = document.getElementById('booking-name').value.trim();
+            const email = document.getElementById('booking-email').value.trim();
+            const pkg = document.getElementById('booking-package').value;
+            const date = document.getElementById('booking-date').value.trim();
+            const details = document.getElementById('booking-details').value.trim();
+
+            const messageParts = [`Care Package: ${pkg}`];
+            if (date) messageParts.push(`Time / Date: ${date}`);
+            if (details) messageParts.push(`Details: ${details}`);
+            const message = messageParts.join('\n');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!res.ok) throw new Error();
+
+                document.getElementById('booking-form-wrap').classList.add('hidden');
+                document.getElementById('booking-success').classList.remove('hidden');
+            } catch {
+                showToast('Something went wrong. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Booking Request';
+            }
+        }
+    </script>
+
+</body>
+</html>
