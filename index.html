@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght=0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Parisienne&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -15,34 +15,34 @@
                 extend: {
                     colors: {
                         sage: {
-                            50: '#f4f7f5',
-                            100: '#e6edea',
-                            200: '#cfddd6',
-                            300: '#adc3b7',
-                            400: '#8d9f87', /* Exact Brand Sage from Logo */
-                            500: '#6d8c7c',
-                            600: '#547061',
-                            700: '#43584c',
-                            800: '#35463d',
-                            900: '#2c3932',
+                            50: '#f7fbf8',
+                            100: '#edf4ef',
+                            200: '#e3eee6',
+                            300: '#d9e7dc',
+                            400: '#cfe0d3', /* Flyer mint — new brand mint */
+                            500: '#a8bfae',
+                            600: '#7f9686',
+                            700: '#55705f',
+                            800: '#3c4f42',
+                            900: '#26332b',
                         },
                         charcoal: {
-                            50: '#f6f6f7',
-                            100: '#ececed',
-                            200: '#d5d6d9',
-                            300: '#b1b3b9',
-                            400: '#858892',
-                            500: '#646772',
-                            600: '#4e505a',
-                            700: '#3f414a',
-                            800: '#1C2321', /* Brand Dark Accent */
-                            900: '#151918',
+                            50: '#f8f5f3',
+                            100: '#e4ddd8',
+                            200: '#d0c4be',
+                            300: '#bcaca3',
+                            400: '#a79488',
+                            500: '#967f71',
+                            600: '#856a5a',
+                            700: '#745543',
+                            800: '#684734', /* Flyer footer brown — new dark accent */
+                            900: '#4a3830', /* Flyer heading brown — deepest accent */
                         },
                         cream: {
-                            50: '#faf9f6',
-                            100: '#F4F1EA', /* Warm Accent Base */
-                            200: '#e8e2d4',
-                            300: '#d5cbb5',
+                            50: '#fdfbf9',
+                            100: '#f5f0ea', /* Warm Accent Base */
+                            200: '#eae5e1', /* Flyer beige card */
+                            300: '#d9cdbe',
                             400: '#bea18d',
                         }
                     },
@@ -60,14 +60,14 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #F4F1EA;
+            background: #f5f0ea;
         }
         ::-webkit-scrollbar-thumb {
-            background: #8d9f87;
+            background: #cfe0d3;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #6d8c7c;
+            background: #a8bfae;
         }
         .blur-backdrop {
             backdrop-filter: blur(12px);
@@ -101,7 +101,7 @@
     </a>
 
     <!-- Navigation (Blended seamlessly into the top Sage header background) -->
-    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#8d9f87] transition-all duration-300" aria-label="Main Site Navigation">
+    <nav class="fixed top-0 left-0 w-full z-50 border-b border-charcoal-800/10 blur-backdrop bg-[#cfe0d3] transition-all duration-300" aria-label="Main Site Navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3">
@@ -118,7 +118,7 @@
                     <a href="#credentials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Credentials</a>
                     <a href="#testimonials" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Testimonials</a>
                     <a href="gallery.html" class="text-charcoal-800/90 hover:text-charcoal-900 hover:font-bold tracking-wide text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg px-2 py-1">Gallery</a>
-                    <a href="services.html#connect" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</a>
+                    <button type="button" onclick="openConnectModal()" class="bg-charcoal-800 text-cream-50 px-5 py-2.5 rounded-lg text-sm font-medium tracking-wider hover:bg-sage-700 hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2">Get in Touch</button>
                 </div>
                 <!-- Mobile menu toggle -->
                 <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-charcoal-800 hover:text-sage-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 rounded-lg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
@@ -127,25 +127,27 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#8d9f87] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#cfe0d3] border-b border-charcoal-800/10 px-4 pt-2 pb-6 space-y-3">
             <a href="index.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Home</a>
             <a href="services.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Services</a>
             <a href="#credentials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Credentials</a>
             <a href="#testimonials" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Testimonials</a>
             <a href="gallery.html" onclick="toggleMobileMenu()" class="block text-charcoal-800 hover:text-white text-base py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-lg px-2">Gallery</a>
-            <a href="services.html#connect" onclick="toggleMobileMenu()" class="block bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</a>
+            <button type="button" onclick="toggleMobileMenu(); openConnectModal();" class="block w-full bg-charcoal-800 text-cream-50 text-center py-3 rounded-lg text-sm font-semibold tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800">Get in Touch</button>
         </div>
     </nav>
 
     <!-- Top Header Logo Section (Matching exact sage background of logo) -->
-    <header id="main-content" class="bg-[#8d9f87] pt-32 pb-12 flex flex-col items-center justify-center relative overflow-hidden">
+    <header id="main-content" class="bg-[#cfe0d3] pt-32 pb-12 flex flex-col items-center justify-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-30" style="background-image:url('header-bg.jpg'); background-size:cover; background-position:center 52%;" aria-hidden="true"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <!-- Exactly sized logo with NO surrounding board or border, blending natively into the background -->
-            <img id="main-hero-logo" 
-                 src="Logo.png" 
-                 alt="Womb to Tomb: Birth Doula & End of Life. Dual Certified Services Logo." 
+            <img id="main-hero-logo"
+                 src="Logo.png"
+                 alt="Womb to Tomb: Birth Doula & End of Life. Dual Certified Services Logo."
                  class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] h-auto mx-auto object-contain fade-in-up">
+            <p class="mt-4 text-4xl sm:text-5xl text-charcoal-900 fade-in-up" style="font-family:'Parisienne',cursive;">Jennifer Thomas</p>
+            <p class="mt-1 font-display text-xs sm:text-sm tracking-[0.2em] uppercase text-charcoal-800 fade-in-up">Dual Certified Doula</p>
         </div>
     </header>
 
@@ -159,12 +161,12 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 fade-in-up">
             <!-- Subtitle -->
             <p class="font-display tracking-[0.25em] text-xs sm:text-sm font-bold text-charcoal-800/90 uppercase">
-                Jennifer Thomas &nbsp;•&nbsp; Dual Certified Services
+                 
             </p>
             
             <!-- Master Tagline Quote -->
             <h1 id="hero-heading" class="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-charcoal-800 leading-[1.2] italic font-light">
-                “Labor is physiological. <br class="hidden sm:inline">Death is inevitable. <span class="font-normal not-italic text-sage-900 block mt-2">I handle both.</span>”
+                “Labor is physiological. <br class="hidden sm:inline">Death is inevitable. <span class="font-normal not-italic text-sage-900 block mt-2">I handle both."</span>
             </h1>
             
             <!-- Bio Frame -->
@@ -177,15 +179,15 @@
                 <a href="services.html#services" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-600 focus-visible:ring-offset-2 transition-all">
                     Support Services
                 </a>
-                <a href="services.html#connect" class="border border-charcoal-800/30 text-charcoal-800 px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-charcoal-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 transition-all">
+                <button type="button" onclick="openConnectModal()" class="border border-charcoal-800/30 text-charcoal-800 px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-charcoal-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 focus-visible:ring-offset-2 transition-all">
                     Inquire for Care
-                </a>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Philosophy & Complete Biography Section -->
-    <section id="philosophy" class="py-24 bg-cream-50 text-[#1C2321] relative border-t border-b border-charcoal-800/10" aria-labelledby="philosophy-heading">
+    <section id="philosophy" class="py-24 bg-cream-50 text-[#684734] relative border-t border-b border-charcoal-800/10" aria-labelledby="philosophy-heading">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
             
             <div class="text-center space-y-3">
@@ -247,122 +249,164 @@
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
-            <div class="text-center mb-16 space-y-3">
+            <div class="text-center mb-4 space-y-3">
                 <span class="font-display text-xs tracking-widest text-sage-400 uppercase font-bold">Rigorous Standards</span>
                 <h2 id="credentials-heading" class="font-serif text-4xl sm:text-5xl text-cream-100">Validated Certifications</h2>
                 <div class="w-16 h-[2px] bg-sage-400 mx-auto mt-4" aria-hidden="true"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <p class="text-center text-sm text-sage-300/80 tracking-wide mb-14"></p>
+
+            <div class="columns-1 md:columns-2 gap-8 lg:gap-12">
 
                 <!-- Birth & Postpartum Care -->
-                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700">
-                    <h3 class="font-serif text-2xl text-sage-300 mb-6">Birth &amp; Postpartum Care</h3>
-                    <ul class="space-y-3.5">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Birth Doula Certification</span>
+                <div class="fade-in-up [animation-delay:0.05s] [break-inside:avoid] mb-8 lg:mb-12 relative overflow-hidden bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 hover:border-sage-700/60">
+                    <svg class="absolute -right-5 -bottom-5 w-32 h-32 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="#a8c4ae" stroke-width="1.2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-9.5"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.5c0-3 2.4-4.8 5.5-5-0.9 3.2-2.8 4.8-5.5 5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15.5c0-3-2.4-4.8-5.5-5 0.9 3.2 2.8 4.8 5.5 5z"/>
+                    </svg>
+                    <div class="relative z-10 flex items-center gap-4 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-charcoal-700 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#cfe0d3" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-9.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.5c0-3 2.4-4.8 5.5-5-0.9 3.2-2.8 4.8-5.5 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.5c0-3-2.4-4.8-5.5-5 0.9 3.2 2.8 4.8 5.5 5z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-sage-300">Birth &amp; Postpartum Care</h3>
+                            <span class="text-xs text-sage-300/60"></span>
+                        </div>
+                    </div>
+                    <ul class="relative z-10">
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Birth Doula Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Childbirth Educator Certification</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Childbirth Educator Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Certified Placenta Specialist Course</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Certified Placenta Specialist</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Postpartum Doula Certification</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Postpartum Doula Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Massage for the Laboring Woman</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Madriella Breastfeeding Educator</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Madriella Doula Network</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Young Parent Support Specialist</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- End-of-Life & Grief Support -->
-                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700">
-                    <h3 class="font-serif text-2xl text-sage-300 mb-6">End-of-Life &amp; Grief Support</h3>
-                    <ul class="space-y-3.5">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">International End of Life Doula Association</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                <div class="fade-in-up [animation-delay:0.18s] [break-inside:avoid] mb-8 lg:mb-12 relative overflow-hidden bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 hover:border-sage-700/60">
+                    <svg class="absolute -right-5 -bottom-5 w-32 h-32 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="#a8c4ae" stroke-width="1.1" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 5.5c-2.2 2-3 4-3 6a3 3 0 006 0c0-2.5-1.4-4.3-3-6z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 18h7"/>
+                    </svg>
+                    <div class="relative z-10 flex items-center gap-4 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-charcoal-700 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#cfe0d3" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5.5c-2.2 2-3 4-3 6a3 3 0 006 0c0-2.5-1.4-4.3-3-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 18h7"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-sage-300">End-of-Life &amp; Grief Support</h3>
+                            <span class="text-xs text-sage-300/60"></span>
+                        </div>
+                    </div>
+                    <ul class="relative z-10">
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">End of Life Care Specialist / Death Doula</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Loss and Bereavement Doula</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Somatic, Holistic & Ceremonial Arts -->
-                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700">
-                    <h3 class="font-serif text-2xl text-sage-300 mb-6">Somatic, Holistic &amp; Ceremonial Arts</h3>
-                    <ul class="space-y-3.5">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                <div class="fade-in-up [animation-delay:0.31s] [break-inside:avoid] mb-8 lg:mb-12 relative overflow-hidden bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 hover:border-sage-700/60">
+                    <svg class="absolute -right-5 -bottom-5 w-32 h-32 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="#a8c4ae" stroke-width="1" aria-hidden="true">
+                        <path stroke-linecap="round" d="M12 12 m0 -6.2 a6.2 6.2 0 1 1 -6.2 6.2 a4.4 4.4 0 1 1 4.4 4.4 a2.6 2.6 0 1 1 2.6 -2.6"/>
+                    </svg>
+                    <div class="relative z-10 flex items-center gap-4 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-charcoal-700 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#cfe0d3" stroke-width="1.6"><path stroke-linecap="round" d="M12 12 m0 -6.2 a6.2 6.2 0 1 1 -6.2 6.2 a4.4 4.4 0 1 1 4.4 4.4 a2.6 2.6 0 1 1 2.6 -2.6"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-sage-300">Somatic, Holistic &amp; Ceremonial Arts</h3>
+                            <span class="text-xs text-sage-300/60"></span>
+                        </div>
+                    </div>
+                    <ul class="relative z-10">
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Reiki Master</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Raindrop Therapy Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Somatic Mind-Body Healing Practitioner</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                        <li class="flex items-start gap-3 py-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">Ordained Minister</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Professional Standards & Practice -->
-                <div class="bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700">
-                    <h3 class="font-serif text-2xl text-sage-300 mb-6">Professional Standards &amp; Practice</h3>
-                    <ul class="space-y-3.5">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">University of Georgia — Criminal Justice</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
+                <div class="fade-in-up [animation-delay:0.44s] [break-inside:avoid] mb-8 lg:mb-12 relative overflow-hidden bg-charcoal-900/60 rounded-3xl p-8 border border-charcoal-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 hover:border-sage-700/60">
+                    <svg class="absolute -right-5 -bottom-5 w-32 h-32 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="#a8c4ae" stroke-width="1.2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5l6.5 2.7v4.6c0 4.6-2.8 7.4-6.5 9.2-3.7-1.8-6.5-4.6-6.5-9.2V6.2L12 3.5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4.5"/>
+                    </svg>
+                    <div class="relative z-10 flex items-center gap-4 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-charcoal-700 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#cfe0d3" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5l6.5 2.7v4.6c0 4.6-2.8 7.4-6.5 9.2-3.7-1.8-6.5-4.6-6.5-9.2V6.2L12 3.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4.5"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-sage-300">Professional Standards &amp; Practice</h3>
+                            <span class="text-xs text-sage-300/60"></span>
+                        </div>
+                    </div>
+                    <ul class="relative z-10">
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
                             <span class="text-cream-100 font-light">HIPAA Compliance for Doulas</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Trauma-Informed Care</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Trauma-Informed Care Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Understanding Developmental Disabilities</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Developmental Disabilities Care and Support Certified</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Madriella Doula Network Membership Renewal</span>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">Madriella Doula Network Membership</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400 flex-shrink-0" aria-hidden="true"></span>
-                            <span class="text-cream-100 font-light">Madriella Doula Network Professional Development Course</span>
+                        <li class="flex items-start gap-3 py-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">International End of Life Doula Association Membership</span>
+                        </li>
+                        <li class="flex items-start gap-3 py-2 border-b border-charcoal-700/60">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sage-400/50 flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+                            <span class="text-cream-100 font-light">University of Georgia — Criminal Justice</span>
                         </li>
                     </ul>
                 </div>
@@ -476,6 +520,62 @@
             </div>
         </div>
     </footer>
+
+    <!-- Connect / Get in Touch Modal -->
+    <div id="connect-modal" class="hidden fixed inset-0 z-[70] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="connect-modal-heading">
+        <div class="absolute inset-0 bg-charcoal-900/60" onclick="closeConnectModal()" aria-hidden="true"></div>
+        <div class="relative bg-cream-50 rounded-3xl shadow-2xl max-w-lg w-full mx-auto p-6 sm:p-10 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeConnectModal()" aria-label="Close contact form" class="absolute top-4 right-4 text-charcoal-500 hover:text-charcoal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal-800 rounded-full p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div id="connect-form-wrap">
+                <span class="font-display text-xs tracking-widest text-sage-700 uppercase font-bold block mb-1">Initiate Connection</span>
+                <h2 id="connect-modal-heading" class="font-serif text-2xl sm:text-3xl text-charcoal-900 mb-1">Protected Consultation Intake</h2>
+                <p class="text-sm text-charcoal-600 font-light mb-6">Share your details below. Let me hold space as we navigate your family's upcoming transition.</p>
+
+                <form id="connect-form" onsubmit="handleConnectSubmit(event)" class="space-y-5">
+                    <div>
+                        <label for="connect-name" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Preferred Name</label>
+                        <input id="connect-name" type="text" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="connect-email" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Email Address</label>
+                        <input id="connect-email" type="email" required class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="name@domain.com">
+                    </div>
+                    <div>
+                        <label for="connect-threshold" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Primary Care Focus</label>
+                        <select id="connect-threshold" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm">
+                            <option>Birth &amp; Pre-Birth Doula Care</option>
+                            <option>End-of-Life, Vigil &amp; Grief Care</option>
+                            <option>Somatic / Integrated Healing Arts Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="connect-timeline" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Expected Timeline / Target Date</label>
+                        <input id="connect-timeline" type="text" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="e.g., Spring 2026 / Imminent Support">
+                    </div>
+                    <div>
+                        <label for="connect-message" class="block text-xs uppercase font-bold text-charcoal-600 tracking-wider mb-2">Detailed Narrative or Special Directives</label>
+                        <textarea id="connect-message" rows="4" class="w-full bg-cream-100/60 border border-charcoal-200 rounded-xl p-3 focus:outline-none focus:border-sage-500 focus:ring-2 focus:ring-sage-400 text-sm" placeholder="Please feel free to share what your heart demands at this threshold..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-charcoal-800 hover:bg-sage-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl shadow-md transition-all transform active:scale-[0.99]">
+                        Send Secure Message
+                    </button>
+                </form>
+            </div>
+
+            <div id="connect-success" class="hidden text-center py-8 space-y-5" role="status" aria-live="polite">
+                <div class="w-16 h-16 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold" aria-hidden="true">✓</div>
+                <h3 class="font-serif text-2xl text-charcoal-900">Your Inquiry is Anchored</h3>
+                <p class="text-charcoal-600 font-light text-sm max-w-xs mx-auto">Thank you for sharing your heart. Jennifer will personally review your information and respond securely within approximately 24 hours.</p>
+                <button onclick="closeConnectModal()" class="bg-charcoal-100 hover:bg-charcoal-200 text-charcoal-800 px-6 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Wrapper for screen readers -->
+    <div id="toast-announcer" class="sr-only" aria-live="polite"></div>
 
     <!-- Front-End Javascript for Interactive Features -->
     <script>
@@ -631,6 +731,88 @@
                 menu.classList.add('hidden');
                 icon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
                 btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const announcer = document.getElementById('toast-announcer');
+            if (announcer) announcer.innerText = message;
+
+            const notification = document.createElement("div");
+            notification.className = "fixed bottom-6 right-6 bg-charcoal-800 text-cream-50 px-6 py-4 rounded-xl shadow-2xl z-[80] transition-all transform translate-y-0 opacity-100 font-medium text-sm border border-charcoal-700";
+            notification.innerText = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+
+        // Connect / Get in Touch modal
+        function connectEscHandler(e) {
+            if (e.key === 'Escape') closeConnectModal();
+        }
+
+        function openConnectModal() {
+            document.getElementById('connect-form-wrap').classList.remove('hidden');
+            document.getElementById('connect-success').classList.add('hidden');
+            document.getElementById('connect-form').reset();
+            const modal = document.getElementById('connect-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+            document.addEventListener('keydown', connectEscHandler);
+            document.getElementById('connect-name').focus();
+        }
+
+        function closeConnectModal() {
+            const modal = document.getElementById('connect-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+            document.removeEventListener('keydown', connectEscHandler);
+        }
+
+        async function handleConnectSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const name = document.getElementById('connect-name').value.trim();
+            const email = document.getElementById('connect-email').value.trim();
+            const threshold = document.getElementById('connect-threshold').value;
+            const timeline = document.getElementById('connect-timeline').value.trim();
+            const userMessage = document.getElementById('connect-message').value.trim();
+
+            const messageParts = [`Threshold: ${threshold}`];
+            if (timeline) messageParts.push(`Timeline: ${timeline}`);
+            if (userMessage) messageParts.push(`Message: ${userMessage}`);
+            const message = messageParts.join('\n');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!res.ok) throw new Error();
+
+                document.getElementById('connect-form-wrap').classList.add('hidden');
+                document.getElementById('connect-success').classList.remove('hidden');
+            } catch {
+                showToast('Something went wrong. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Secure Message';
             }
         }
 
